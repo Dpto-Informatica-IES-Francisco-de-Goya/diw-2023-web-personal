@@ -1,4 +1,58 @@
 @charset "UTF-8";
+:root .tema-claro {
+  --color-1: #4CAF50;
+  --color-2: #FFC107;
+  --color-3: #2196F3;
+  --color-4: #FF5722;
+  --color-5: #9C27B0;
+}
+:root .tema-oscuro {
+  --color-1: #607D8B;
+  --color-2: #FF9800;
+  --color-3: #03A9F4;
+  --color-4: #FFEB3B;
+  --color-5: #9E9E9E;
+}
+
+.iconInstagram {
+  background-image: "./img/Instagram.png";
+}
+
+.iconTwitter {
+  background-image: "./img/Twitter.png";
+}
+
+.iconGitHub {
+  background-image: "./img/GitHub.png";
+}
+
+.iconLinkedIn {
+  background-image: "./img/LinkedIn.png";
+}
+
+.iconUser {
+  background-image: "./img/User.png";
+}
+
+/*Si $debug es true, .info es mostrado; si es false entonces
+no se muestra.*/
+.info {
+  display: inline-block;
+}
+
+/*Esta función hace que el texto con el color especificado (aunque tenga distinta tonalidad)
+se vean normal y los títulos con dicho color se vean un 20% más claro del color especificado*/
+body {
+  background-color: #3498db;
+}
+
+h1 {
+  color: #8bc4ea;
+}
+
+/*
+Página Web desarrollada por Sergio
+*/
 body {
   background-color: var(--color-1);
   overflow: hidden;
@@ -9,7 +63,7 @@ body {
 .claseEstiloDiv {
   background-color: var(--color-2);
   border-radius: 20px;
-  color: #330045;
+  color: var(--color-5);
   text-align: center;
   position: relative;
   padding: 70px;
@@ -68,5 +122,99 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
+
+.galeria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.galeria-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+button {
+  --glow-color: rgb(000, 1000, 000);
+  --glow-spread-color: rgba(000, 1000, 000, 0.1);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(000, 000, 000);
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+}
+
+button::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+button:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+button:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+#nav1 {
+  background-color: var(--color-3);
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  padding: 25px;
+  z-index: 3;
+}
+#nav1 .li1 {
+  display: inline-block;
+  color: var(--color-4);
+  font-size: 25px;
+  width: 20%;
+}
+#nav1 .li1 .a1 {
+  display: inline-block;
+  padding: 8px;
+}
+
+.claseFooter {
+  background-color: var(--color-5);
+  color: var(--color-1);
+  border-radius: 10px;
+  position: sticky;
+  bottom: 5px;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/*position: fixed;
+  bottom: 0px;
+  background-attachment: black;
+  width: 100%;
+  z-index: 10;*/
+/*@import './Styles/modoNoche.scss';*/
 
 /*# sourceMappingURL=main.css.map */
