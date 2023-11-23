@@ -1,0 +1,77 @@
+/*estilo*/
+
+//listas de colores
+
+$color-1-claro: #e0edfe;
+$color-2-claro: #b9dafe;
+$color-3-claro: #6cb6fb;
+$color-4-claro: #0063c9;
+$color-5-claro: #014fa3;
+
+$colores-oscuros : (
+#0063c9,	
+#014fa3,	
+#064991,	
+#0b396f,	
+#07244a		
+
+);
+
+
+:root {
+  .tema-claro{
+  --color-1:  #{$color-1-claro};
+  --color-2:  #{$color-2-claro};
+  --color-3:  #{$color-3-claro};
+  --color-4:  #{$color-4-claro};
+  --color-5:  #{$color-5-claro};
+  }
+  .tema-oscuro{
+    --color-1:  #{nth($colores-oscuros,1)};
+    --color-2:  #{nth($colores-oscuros,2)};
+    --color-3:  #{nth($colores-oscuros,3)};
+    --color-4:  #{nth($colores-oscuros,4)};
+    --color-5:  #{nth($colores-oscuros,5)};
+  }  
+}
+
+
+
+$tamanios-iconos-footer-horizontal : (
+ 'pequenio':5%, 
+ 'medio':15%,
+ 'grande':100px
+);
+$tamanios-iconos-footer-vertical : (
+ 'pequenio':5px, 
+ 'medio':15px,
+ 'grande':100px
+);
+
+$tamanios-iconos-contenido : (
+ 'pequenio':8%, 
+ 'medio':35%,
+ 'grande':100px
+);
+
+
+/* MODO DEBUG*/
+$debug: false;
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//llama  a los partial
+@import "./partial_principal/_boton_principal.scss";
+@import "./partial_principal/_menu_superior.scss";
+@import "./partial_principal/_footer.scss";
+@import "./partial_principal/_contenido.scss";
+
+body {
+    margin: 0px;
+   background-color: #f0f6ff;
+ 
+}

@@ -1,18 +1,23 @@
+/*menu_superior*/
 header {
-
-    background-color: var(--color-1);
-    height: 70px;
+   
     position: sticky;
+    //variable
+    background-color: var(--color-3);
+    height: 70px;
     top: 10px;
+    filter: drop-shadow(0 -6mm 4mm var(--color-4));
 
-    filter: drop-shadow(0 -6mm 4mm var(--color-2));
+
+
+
 } 
 
 h1.menu {
     width: 33.33%;
     float: left;
-
     text-align: center;
+ 
     /*Heigut tiene q ir si no, el  h1 medio , se pierde*/
     /* height: 50px;*/
     font-family: cursive;
@@ -33,7 +38,6 @@ html {
     box-sizing: inherit;
 }
 
-
 body {
-    height: 1000px;
+    height: 100px;
 }

@@ -1,0 +1,54 @@
+footer {
+
+    position: fixed;
+    bottom: 15px;
+    width: 100%;
+    //variables
+    background-color: var(--color-3);
+    filter: drop-shadow(5px 10px 4px var(--color-4));
+}
+
+
+
+
+@keyframes giro {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*anidamientos*/
+ul {
+    display: block;
+
+}
+
+// for each iconos del footer
+$redes-sociales: github linkedin gmail whatsapp;
+
+.redes-sociales {
+
+
+    @each $red in $redes-sociales {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            width: 24%;
+            text-align: center;
+
+            .iconofooter {
+                //interpolacion
+                background-image: url("iconos/#{$red}.png");
+                /*mapas*/
+                width: map-get($tamanios-iconos-footer-horizontal, 'medio');
+                animation: giro 4s 2 linear;
+            }
+        }
+    }
+
+}

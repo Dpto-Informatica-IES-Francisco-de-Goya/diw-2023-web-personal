@@ -1,0 +1,283 @@
+/*estilo*/
+:root .tema-claro {
+  --color-1: #e0edfe;
+  --color-2: #b9dafe;
+  --color-3: #6cb6fb;
+  --color-4: #0063c9;
+  --color-5: #014fa3;
+}
+:root .tema-oscuro {
+  --color-1: #0063c9;
+  --color-2: #014fa3;
+  --color-3: #064991;
+  --color-4: #0b396f;
+  --color-5: #07244a;
+}
+
+/* MODO DEBUG*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-5 {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+
+.slider-5 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 25px;
+  background-color: var(--color-2);
+  border: 1px solid #eaeaea;
+}
+
+.slider-5:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0eb";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-size: 20px;
+  transition: 0.3s ease all;
+  color: #d0c56a;
+}
+
+input:checked + .slider-5:before {
+  transform: translate(20px) rotate(360deg);
+  content: "\f186";
+  color: #d0c56a;
+}
+
+input:checked + .slider-5 {
+  background-color: #4e4e4e;
+  left: 0px;
+}
+
+/*menu_superior*/
+header {
+  position: sticky;
+  background-color: var(--color-3);
+  height: 70px;
+  top: 10px;
+  filter: drop-shadow(0 -6mm 4mm var(--color-4));
+}
+
+h1.menu {
+  width: 33.33%;
+  float: left;
+  text-align: center;
+  /*Heigut tiene q ir si no, el  h1 medio , se pierde*/
+  /* height: 50px;*/
+  font-family: cursive;
+  color: var(--color-5);
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  height: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  background-color: var(--color-3);
+  filter: drop-shadow(5px 10px 4px var(--color-4));
+}
+
+@keyframes giro {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*anidamientos*/
+ul {
+  display: block;
+}
+
+.redes-sociales {
+  list-style: none;
+  list-style: none;
+  list-style: none;
+  list-style: none;
+}
+.redes-sociales li {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.redes-sociales li .iconofooter {
+  background-image: url("iconos/github.png");
+  /*mapas*/
+  width: 15%;
+  animation: giro 4s 2 linear;
+}
+.redes-sociales li {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.redes-sociales li .iconofooter {
+  background-image: url("iconos/linkedin.png");
+  /*mapas*/
+  width: 15%;
+  animation: giro 4s 2 linear;
+}
+.redes-sociales li {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.redes-sociales li .iconofooter {
+  background-image: url("iconos/gmail.png");
+  /*mapas*/
+  width: 15%;
+  animation: giro 4s 2 linear;
+}
+.redes-sociales li {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+.redes-sociales li .iconofooter {
+  background-image: url("iconos/whatsapp.png");
+  /*mapas*/
+  width: 15%;
+  animation: giro 4s 2 linear;
+}
+
+main {
+  clear: left;
+}
+main div {
+  display: inline;
+}
+
+div {
+  text-align: center;
+  width: 33.33%;
+  float: left;
+  padding-top: 200px;
+  text-align: center;
+}
+
+.iconomedio {
+  width: 35%;
+  position: relative;
+  top: -50px;
+  right: 5px;
+  filter: drop-shadow(5px 10px 4px var(--color-5));
+  animation: rotar 4s linear;
+  text-align: center;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.img {
+  width: 50%;
+  display: none;
+}
+
+section h1 {
+  text-align: center;
+}
+
+.iconoside {
+  width: 8%;
+  position: relative;
+  left: 10%;
+  animation: caer 1s ease-in-out forwards;
+}
+
+@keyframes caer {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+article {
+  padding-top: 5%;
+  display: inline-block;
+}
+
+.nombre {
+  font-size: 300%;
+  font-family: "Tangerine", cursive;
+  position: relative;
+  top: -25px;
+}
+
+.apellido {
+  font: caption;
+  font-size: 200%;
+  position: relative;
+  top: -30px;
+}
+
+section {
+  display: block;
+  position: relative;
+  top: -60px;
+}
+
+.titulo {
+  font-family: cursive;
+}
+
+p.en-construccion {
+  text-align: center;
+}
+p.en-construccion img {
+  width: 20%;
+  display: none;
+}
+
+.central {
+  padding-top: 50px;
+}
+
+body {
+  margin: 0px;
+  background-color: #f0f6ff;
+}
+
+/*# sourceMappingURL=estilos_principal.css.map */

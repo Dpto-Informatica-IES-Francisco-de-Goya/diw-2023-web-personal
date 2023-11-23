@@ -1,0 +1,167 @@
+main {
+    clear: left;
+
+    div {
+
+        //modo debug con if else
+        @if $debug==true {
+            display: none;
+        }
+
+        @else {
+            display: inline;
+        }
+
+    }
+
+}
+
+//cracion de mixings
+@mixin centrado () {
+    text-align: center;
+}
+
+
+
+
+div {
+    text-align: center;
+    width: 33.33%;
+    float: left;
+    padding-top: 200px;
+
+    // text-align: center;
+    //incluyendo el mixings
+    @include centrado();
+
+
+}
+
+
+.iconomedio {
+
+    width: map-get($tamanios-iconos-contenido, "medio");
+    position: relative;
+    top: -50px;
+    right: 5px;
+    filter: drop-shadow(5px 10px 4px var(--color-5));
+    animation: rotar 4s linear;
+    text-align: center;
+ 
+}
+
+@keyframes rotar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.img {
+    width: 50%;
+
+    @if $debug==false {
+        display: none;
+    }
+
+    @else {
+        display: inline;
+    }
+}
+
+
+
+section h1 {
+    text-align: center;
+
+}
+
+.iconoside {
+
+    //mapa
+    width: map-get($tamanios-iconos-contenido, "pequenio");
+    position: relative;
+    left: 10%;
+    animation: caer 1s ease-in-out forwards;
+
+}
+
+
+@keyframes caer {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+article {
+
+    padding-top: 5%;
+    display: inline-block;
+
+}
+
+
+
+
+.nombre {
+    font-size: 300%;
+    font-family: 'Tangerine', cursive;
+    position: relative;
+    top: -25px;
+
+}
+
+.apellido {
+    font: caption;
+    font-size: 200%;
+    position: relative;
+    top: -30px;
+}
+
+section {
+    display: block;
+    position: relative;
+    top: -60px;
+
+}
+
+
+.titulo {
+    font-family: cursive;
+
+}
+
+p.en-construccion {
+    //incluyendo el mixings
+    @include centrado();
+
+    img {
+        width: 20%;
+
+        //modo debug con if else
+        @if $debug==false {
+            display: none;
+        }
+
+        @else {
+            display: inline;
+        }
+
+    }
+}
+
+
+.central {
+
+    padding-top: 50px;
+
+
+
+}
