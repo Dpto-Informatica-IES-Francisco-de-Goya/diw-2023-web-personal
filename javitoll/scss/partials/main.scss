@@ -1,40 +1,52 @@
-#foto, #parrafos{
-
+#foto, #parrafos {
     width: 50%;
     float: left;
-    text-align: center;
-
+    text-align: map-get($texto, 'centro' );
 }
 
-#javi{
+#parrafos {
+    margin-top: 40px;
+}
+
+#javi {
     width: 20%;
     border-radius: 50%;
 }
 
-h2{
+h2 {
     position: relative;
     right: 20%;
+    color: var(--color-5);  // Utiliza el color-5 definido en la paleta de colores
+    font-family:  'Joti One', serif;   // Utiliza la fuente 'Joti One'
 }
 
-#cabe{
-
-    background-color: var(--color-3);
+#cabe {
+    background-color: var(--color-3);  // Utiliza el color-3 definido en la paleta de colores
 }
 
-article{
+h4 {
+    font-family: 'Irish Grover', serif;   // Utiliza la fuente 'Irish Grover'
+    color: var(--color-4);  // Utiliza el color-4 definido en la paleta de colores
+}
+
+// Anidamiento de estilos para el elemento article
+article {
     top: 40px;
     clear: left;
     position: relative;
     left: 20%;
     width: 60%;
-    background-color: var(--color-4);
+    background-color: var(--color-4);  // Utiliza el color-4 definido en la paleta de colores
     margin: 20px;
-    
-}
-p{
-    margin: 20px;
-}
-li{
-    margin: 20px;
-    list-style: none;
+    color: var(--color-3);  // Utiliza el color-3 definido en la paleta de colores
+
+    // Anidamiento adicional para los elementos p y li dentro del article
+    &:p {
+        margin: 20px;
+    }
+
+    &:li {
+        margin: 20px;
+        list-style: none;  // Elimina los estilos de lista
+    }
 }

@@ -1,16 +1,13 @@
-footer{
-
-    position: fixed;
-    background-color: var(--color-2);
-    bottom: 0%;
-    width: 100%;
-    text-align: center;
-    
-}
-img{
-    width: 5%;
-    margin-left : 10%;
-    margin-right: 10%; 
-
+footer {
+    position: fixed;  // Establece la posición del footer como fija
+    background-color: var(--color-2);  // Utiliza el color-2 definido en la paleta de colores
+    bottom: 0%;  // Fija el footer en la parte inferior de la pantalla
+    width: 100%;  // Establece el ancho del footer al 100% del contenedor
+    text-align: map-get($texto , 'centro' );  // Centra el contenido del footer con el uso del map
 }
 
+img {
+    width: 5%;  // Establece el ancho de todas las imágenes al 5% del contenedor
+    margin-left: 10%;  // Establece el margen izquierdo de todas las imágenes al 10%
+    margin-right: 10%;  // Establece el margen derecho de todas las imágenes al 10%
+}

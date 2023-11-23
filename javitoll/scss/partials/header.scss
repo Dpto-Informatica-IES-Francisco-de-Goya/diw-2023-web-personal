@@ -1,16 +1,19 @@
-nav{
+nav {
     width: 100%;
-    position: sticky;
-    background-color: var(--color-2);
+    position: sticky;  // Establece la posición "sticky"
+    background-color: var(--color-2);  // Utiliza el color-2 definido en la paleta de colores
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-a{
+a {
     font-size: 40px;
-    display: inline-block; 
-    width: 24%;
+    display: inline-block;  // Hace que el elemento <a> sea un bloque en línea
+    width: 24%;  // Establece el ancho del enlace al 24% del contenedor
     padding: 4px;
-    text-align: center;
+    text-align: map-get($texto, 'centro');  // Establece la propiedad text-align utilizando map-get con la fuente 'centro'
+    color: var(--color-5);  // Utiliza el color-5 definido en la paleta de colores
+    font-family: 'Kavoon', serif;  // Utiliza la fuente 'Kavoon'
+    text-decoration: none;  // Elimina el subrayado predeterminado en los enlaces
 }

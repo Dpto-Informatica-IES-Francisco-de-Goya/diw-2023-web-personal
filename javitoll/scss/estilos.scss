@@ -1,58 +1,89 @@
+// Definición de colores principales para el tema claro
+$color-1-claro: #c2185b;
+$color-2-claro: #252A34;
+$color-3-claro: #EAEAEA;
+$color-4-claro: #222831;
+$color-5-claro: #3498db;
+
+// Definición de colores oscuros utilizando un mapa
+$colores-oscuros: (
+  #252A34,
+  #FF2E63,
+  #EAEAEA,
+  #FF2E63,
+  #08D9D6
+);
+
+// Definición de variables CSS personalizadas utilizando la pseudo-clase :root
+:root {
+  .tema-claro {
+    --color-1: #{$color-1-claro};
+    --color-2: #{$color-2-claro};
+    --color-3: #{$color-3-claro};
+    --color-4: #{$color-4-claro};
+    --color-5: #{$color-5-claro};
+  }
+  .tema-oscuro {
+    --color-1: #{nth($colores-oscuros, 1)};
+    --color-2: #{nth($colores-oscuros, 2)};
+    --color-3: #{nth($colores-oscuros, 3)};
+    --color-4: #{nth($colores-oscuros, 4)};
+    --color-5: #{nth($colores-oscuros, 5)};
+  }
+}
+
+// Estilos generales del cuerpo de la página
+body {
+  background-color: var(--color-1);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Uso de un bucle each para generar estilos para iconos
+$iconos: instagram, linkedIn, youtube, Javito;
+@each $icono in $iconos {
+  .icon#{$icono} {
+    background-image: url("./img/#{$icono}.png");
+  }
+}
+
+// Uso de un mixin para el modo de depuración
+$debug: true !default;
+
+@mixin debugmode {
+  @if $debug {
+    @debug "Modo debug activado";
+    display: inline-block;
+  } @else {
+    display: none;
+  }
+}
+
+// Definición de un mapa para importar fuentes
+$texto: (
+  'centro': center,
+  'derecha': right,
+  'izquierda': left
+);
+
+// Definición de una función para calcular el ancho y alto de una página (aunque actualmente la función no realiza ningún cálculo)
+@function calcularTam($ancho, $total) {
+  $alto: 20%;
+  $total: 100%;
+}
+
+// Interpolación de una variable
+$autor: "Javito";
+/*
+   Desarrollador de la web #{autor}
+*/
+
+// Importación de archivos parciales y fuentes externas
 @import "./partials/boton.scss";
 @import "./partials/header.scss";
 @import "./partials/main.scss";
 @import "./partials/footer.scss";
 
-
-
-
-
-
-$color-1-claro: #B0C2F2;
-$color-2-claro: #B0F2C2;
-$color-3-claro: #7d7;
-$color-4-claro: #fff;
-
-
-$colores-oscuros : (
-  #154360 ,
-  #17a589 ,
-  #186a3b ,
-  #95a5a6 
-);
-
-:root {
-  .tema-claro{
-  --color-1:  #{$color-1-claro};
-  --color-2:  #{$color-2-claro};
-  --color-3:  #{$color-3-claro};
-  --color-4:  #{$color-4-claro};
-  }
-  .tema-oscuro{
-    --color-1:  #{nth($colores-oscuros,1)};
-    --color-2:  #{nth($colores-oscuros,2)};
-    --color-3:  #{nth($colores-oscuros,3)};
-    --color-4:  #{nth($colores-oscuros,4)};
-    
-  }
-} 
-
-
-
-
-
-
-
-body{
-    background-color: var(--color-1);
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-
-
-
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
