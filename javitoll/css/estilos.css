@@ -1,3 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Joti+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+:root .tema-claro {
+  --color-1: #c2185b;
+  --color-2: #252A34;
+  --color-3: #EAEAEA;
+  --color-4: #222831;
+  --color-5: #3498db;
+}
+:root .tema-oscuro {
+  --color-1: #252A34;
+  --color-2: #FF2E63;
+  --color-3: #EAEAEA;
+  --color-4: #FF2E63;
+  --color-5: #08D9D6;
+}
+
+body {
+  background-color: var(--color-1);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.iconinstagram {
+  background-image: url("./img/instagram.png");
+}
+
+.iconlinkedIn {
+  background-image: url("./img/linkedIn.png");
+}
+
+.iconyoutube {
+  background-image: url("./img/youtube.png");
+}
+
+.iconJavito {
+  background-image: url("./img/Javito.png");
+}
+
+/*
+   Desarrollador de la web autor
+*/
 input {
   opacity: 0;
   width: 0;
@@ -61,12 +104,19 @@ a {
   width: 24%;
   padding: 4px;
   text-align: center;
+  color: var(--color-5);
+  font-family: "Kavoon", serif;
+  text-decoration: none;
 }
 
 #foto, #parrafos {
   width: 50%;
   float: left;
   text-align: center;
+}
+
+#parrafos {
+  margin-top: 40px;
 }
 
 #javi {
@@ -77,10 +127,17 @@ a {
 h2 {
   position: relative;
   right: 20%;
+  color: var(--color-5);
+  font-family: "Joti One", serif;
 }
 
 #cabe {
   background-color: var(--color-3);
+}
+
+h4 {
+  font-family: "Irish Grover", serif;
+  color: var(--color-4);
 }
 
 article {
@@ -91,13 +148,12 @@ article {
   width: 60%;
   background-color: var(--color-4);
   margin: 20px;
+  color: var(--color-3);
 }
-
-p {
+article:p {
   margin: 20px;
 }
-
-li {
+article:li {
   margin: 20px;
   list-style: none;
 }
@@ -114,25 +170,6 @@ img {
   width: 5%;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-:root .tema-claro {
-  --color-1: #B0C2F2;
-  --color-2: #B0F2C2;
-  --color-3: #7d7;
-  --color-4: #fff;
-}
-:root .tema-oscuro {
-  --color-1: #154360;
-  --color-2: #17a589;
-  --color-3: #186a3b;
-  --color-4: #95a5a6;
-}
-
-body {
-  background-color: var(--color-1);
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=estilos.css.map */
