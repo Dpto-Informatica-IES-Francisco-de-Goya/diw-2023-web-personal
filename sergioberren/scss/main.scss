@@ -1,5 +1,5 @@
-$color-1-claro: #FFC107;
-$color-2-claro: #4CAF50;
+$color-1-claro: #4CAF50;
+$color-2-claro: #FFC107;
 $color-3-claro: #2196F3;
 $color-4-claro: #FF5722;
 $color-5-claro: #9C27B0;
@@ -29,6 +29,61 @@ $colores-oscuros : (
     }
 }
 
+$iconos: Instagram, Twitter, GitHub, LinkedIn, User;
+@each $icono in $iconos {
+    .icon#{$icono}{
+        background-image:("./img/#{$icono}.png");
+    }
+}
+
+$debug: true !default;
+
+@mixin debugmode {
+    @if $debug {
+        @debug "Modo debug activado";
+
+        display: inline-block;
+    }
+    @else {
+        display: none;
+    }
+}
+
+/*Si $debug es true, .info es mostrado; si es false entonces
+no se muestra.*/
+
+.info {
+    @include debugmode;
+}
+
+/*Esta función hace que el texto con el color especificado (aunque tenga distinta tonalidad)
+se vean normal y los títulos con dicho color se vean un 20% más claro del color especificado*/
+@function lighten-color($color, $amount) {
+    @return lighten($color, $amount);
+  }
+  
+  // Ejemplo de uso:
+  $colorOriginal: #3498db;
+  $colorMasClaro: lighten-color($colorOriginal, 20%);
+  
+  body {
+    background-color: $colorOriginal;
+  }
+  
+  h1 {
+    color: $colorMasClaro;
+  }
+
+
+
+  // Esta interpolación hace que se pueda ver quien es el autor
+  $autor: "Sergio";
+
+  /*
+  Página Web desarrollada por #{$autor}
+  */
+
 @import './Styles/contenido.scss';
 @import './Styles/menu.scss';
 @import './Styles/footer.scss';
+/*@import './Styles/modoNoche.scss';*/

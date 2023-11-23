@@ -1,28 +1,39 @@
-const images = [
-    { src: ".png", url: "https://www.marca.com" },
-    { src: ".png", url: "https://www.youtube.com" }
+// Constante (array) con las imágenes y las url a las que redireccionan
+const imagenes = [
+    { src: "img/Instagram.png", url: ""},
+    { src: "img/Twitter.png", url: ""},
+    { src: "img/GitHub.png", url: "https://github.com/SergioBerren"},
+    { src: "img/LinkedIn.png", url: ""}
   ];
   
   let currentImageIndex = 0;
-  const imgElement = document.getElementById('currentImg');
+  const imgElemento = document.getElementById('imagenActual');
   
   function showImage() {
-    imgElement.src = images[currentImageIndex].src;
+    imgElemento.src = imagenes[currentImageIndex].src;
   }
   
-  function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
+  function siguienteImagen() {
+    currentImageIndex = (currentImageIndex + 1) % imagenes.length;
     showImage();
   }
   
-  function previousImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    showImage();
+  function redireccionamientoPagina() {
+
+    let url = document.getElementById("imagenActual").src.split("/")
+    let clave = url[url.length-1]
+
+    console.log(clave)
+
+    if(clave === "Instagram.png"){
+        window.location.href = imagenes[0].url;
+    } else if(clave === "Twitter.png") {
+        window.location.href = imagenes[1].url;
+    } else if(clave === "GitHub.png") {
+        window.location.href = imagenes[2].url;
+    } else {
+        window.location.href = imagenes[3].url;
+    }
+
   }
-  
-  function redirectToPage(index) {
-    window.location.href = images[index].url;
-  }
-  
   showImage();
-  
