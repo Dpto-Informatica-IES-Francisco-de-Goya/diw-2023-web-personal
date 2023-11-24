@@ -8,9 +8,10 @@
     <script src="javascript/estilo.js" defer></script>
     <title>Document</title>
 </head>
-<body class="tema-claro">
+<body class="tema-claro">   
     <header>
         <div class="cabecera">
+            <!--los g1 son los globos del menu y las m son marcos-->
             <div class="g1"><p>inicio</p></div>
             <div  class="g2"><p>autor</p></div>
             <div class="g3"><p>sobre mi</p></div>
@@ -24,27 +25,31 @@
     <main>
         <section class="sec1">
             <article class="art11">
-                
+                <!--los c son las cajas del menu y las m son marcos-->
                 <div class="ma m1">
-                    <div class="c c1">
-                        <img class="i" src="hobbies.png" alt="hobbies">
+                    <div class="c datos">
+                    
+                    
                     </div>
                 </div>
             </article>
             <article class="art12">
 
                 <div class="ma m2">
-                    <div class="c c2">
-                        <img class="i" src="formacion.png" alt="formacion">
+                    <div class="c hobbies">
+                      
                     </div>
                 </div>
             </article>
         </section>
         <section class="sec2">
             <article class="art21">
-                <div onclick="cambio()" class="foto">
+                <div class="wrapper">
+                    <input  onclick="cambio()" type="checkbox" name="checkbox" class="switch">
+                    </div>
+                <div class="foto">
                     <div  class="retrato">
-                        <img src="yo.png" alt="yo">
+                        <img src="imagenes/yo.png" alt="yo">
                     </div>
                 </div>
                 
@@ -52,7 +57,46 @@
             <article class="art22">
                 
                 <div class="mrespuesta">
-                    <div class="respuesta"></div>
+                    <div class="respuesta">
+                        <div id="texto1">
+                            <h1>datos personales</h1>
+                            <ul>
+                                <li>Nombre:Armando Jorge</li>
+                                <li>Apellidos: Sierralaya Baldeon</li>
+                                <li>Edad:26 años</li>
+                                <li>Nacionalidad: Española</li>
+                                <li>Origen: Peru</li>
+                                <li>Movil: 611453651</li>
+                                <li>Correo: asierralaya@gmail.com</li>
+                            </ul>
+                        </div> <div id="texto2">
+                            <h1>hobbies</h1>
+                            <ul>
+                                <li>Pintura y Dibujo</li>
+                                <li>Escritura y la lectura</li>
+                                <li>Baile y ejercicios</li>
+                                <li>viajar y conocer</li>
+                                <li>Fotografia y videojuegos</li>
+                            </ul>
+                        </div> <div id="texto3">
+                            <h1>formacion <h1>
+                            <ul>
+                                <li>grado superior en desarrollo de aplicaciones web</li>
+                                <li>cocinero a tiempo parcial</li>
+                                <li>empleado en ferreteria</li>
+                                <li>ayudante de limpieza de almacenes y mudanzas</li>
+                            </ul>
+                        </div> <div id="texto4">
+                            <h1>curiosidades</h1>
+                            <ul>
+                                <li>disfruto de piñas coladas</li>
+                                <li>me gusta mojarme en la lluvia</li>
+                                <li>vivo mi fe</li>
+                                <li>amo las peliculas de terror y suspense</li>
+                                <li>puedo pasarme horas jugando videojuegos</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </article>
@@ -60,16 +104,16 @@
          <section class="sec3">
             <article class="art31">
                 <div class="ma m3">
-                    <div class="c c3">
-                        <img class="i" src="estudios.png" alt="estudios">
+                    <div class="c estudios">
+                       
                     </div>
                 </div>
             </article>
             <article class="art32"> 
             
             <div class="ma m4">
-                <div class="c c4">
-                    <img class="i" src="curiosidades.png" alt="curiosidades">
+                <div class="c curiosidades">
+                    
                 </div>
             </div>
             </article>
@@ -79,13 +123,13 @@
     <footer>
         <div class="pies">
             <div class="b b1">
-                <div class="mb"></div>
+                <div class="mb git"></div>
             </div>
             <div class="b b2">
-                <div class="mb"></div>
+                <div class="mb correo"></div>
             </div>
             <div class="b b3">
-                <div class="mb"></div>
+                <div class="mb instagram"></div>
             </div>
         </div>
         
