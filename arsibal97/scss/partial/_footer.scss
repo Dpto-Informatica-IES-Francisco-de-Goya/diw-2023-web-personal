@@ -1,3 +1,4 @@
+
 .pies {
     display: block;
     height: 120px;
@@ -19,7 +20,7 @@ div.b{
     
 
   }
-  div.mb{
+  .mb{
     background-color: var(--color-5);
     position: absolute;
     border: 1px solid black;
@@ -28,4 +29,16 @@ div.b{
     width: 86%;
     height: 87%;
     border-radius: 60px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 1);
   }
+//un foreach para poner las igamenes en el footer 
+$redes: git,correo,instagram;
+  @each $r in $redes{
+    .mb.#{$r}{
+      background-image:url(../imagenes/#{$r}.png);
+      background-size:70% 70%;  
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  

@@ -1,3 +1,4 @@
+// creamos la lista de colores 
 $color1-claro:#EF6262;
 $color2-claro:#3FAABC;
 $color3-claro:#22A699;
@@ -11,9 +12,13 @@ $colores-oscuros : (
   #13685f,
   #9b935b,
   #9a6b3c,
-  #ffffff63,
+  #6d6d6d63,
   
 );
+//ponemos el debug en true 
+$debug:true;
+
+//creamos los mapas 
 :root{
   .tema-claro{
     --color-1: #{$color1-claro};
@@ -33,7 +38,7 @@ $colores-oscuros : (
 
   }
 }
-
+//usamos map
 $tamanio-horizontal-porcentaje: (
   "xxs" : 28%,
   "xs": 44%,
@@ -49,7 +54,9 @@ $tamanio-horizontal-porcentaje: (
 
 
 
+@debug false;
 
+//exportamos con import 
 @import "partial/_menu.scss";
 @import "partial/_cuerpo.scss";
 @import "partial/_footer.scss";

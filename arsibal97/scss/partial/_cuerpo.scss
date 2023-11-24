@@ -1,15 +1,27 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+//aqui estoy creando una funcion para ponerlo en
+@function calcular-altura($porcentaje) {
+  @return 1500px * $porcentaje;
+}
+
+//aqui ponemos anidamos las secciones y articulos dentro del main
 main{
     background-color:var(--color-1);
     position: relative;
     width: 100%;
     height: 1700px;
   }
+  //usamos position
   .sec1{
     position: relative;
    
     float: left;
     width: map-get($tamanio-horizontal-porcentaje , "xxs" );
-    height: 1500px;
+    height: calcular-altura(0.8);
 
     .art11 {
       position: absolute;
@@ -17,31 +29,22 @@ main{
       height: 540px;
       top: 450px;
       left: 100px;
-    
-  
-
     }
      .art12 {
       position: absolute;
-      
       width: map-get($tamanio-horizontal-porcentaje , "l" );
       height: 540px;
       top: 1100px;
       left: 100px;
-  
-  
     }
   }
   .sec2{
     position: relative;
-
     float: left;
     width: map-get($tamanio-horizontal-porcentaje , "xs" );
-    height: 1500px;
-    
+    height: calcular-altura(0.8);
     .art21 {
       position: absolute;
-     
       width: map-get($tamanio-horizontal-porcentaje , "m" );
       height: 570px;
       top: 150px ;
@@ -54,70 +57,104 @@ main{
         box-shadow: 10px 10px 15px rgb(109, 109, 109);
         div.retrato{
           position: absolute;
-          background-color: var(--color-5);
           border-radius: 10%;
           width: map-get($tamanio-horizontal-porcentaje , "xl" );
           height: 424px;
           top: 20px;
           left: 28px;
-          img{
-            width: map-get($tamanio-horizontal-porcentaje , "xxl" );
-            height: 112%;
-      
+          //utilizamos el debug
+          @if $debug==true{
+            background-color: var(--color-5); 
           }
-        }
-
-
+          @else{
+            background-image: url(../imagenes/emo.jpg);
+          }   
+          //fijamos la imagen
+          img{
+            max-width: 350px;
+            height: 112%;
+            margin: auto;
+            display: block;
+          }
+        }   
       }
-  
-  
     } 
      .art22 {
       position: absolute;
-      
       width: map-get($tamanio-horizontal-porcentaje , "s" );
       height: 500px;
       top: 750px;
       left: 109px;
-  
-  
     } 
   }
   .sec3{
     position: relative;
-   
     float: left;
     width: map-get($tamanio-horizontal-porcentaje , "xxs" );
-    height: 1500px;
+    height: calcular-altura(0.8);
 
   }
+
+  //creamos un mixin con parametros 
+  @mixin conjunto($t,$a,$p){
+    width: map-get($tamanio-horizontal-porcentaje , $t );
+    border-radius: 60px;
+    height: $a;
+    position: $p;
+  }
+
+  //mixin sin parametros 
+  @mixin letras(){
+    color: #fcdf99;
+    font-size: 10px;
+    line-height: 27px;
+    text-shadow:  -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px  1px 0 black,
+    1px  1px 0 black; 
+    padding: 20px;
+    border-radius: 5px;
+    width: 252px;
+    margin: 0 auto;
+    display: none;
+    h1 {
+      font-family: titulo;
+      font-size: 42px;
+      text-align: center;
+      margin: 0;
+      padding-bottom: 20px;
+    }
+    ul {
+      padding: 0;
+    }
+    li {
+      font-family: Vintage;
+      margin: 5px 0;
+      font-size: 18px;
+    }
+  }
  
+//agregamos los elemento de la lista y mapa
   div.ma{
     background-color: var(--color-5);
-    position: relative;
-    border-radius: 60px;
     border: 3px solid black;
-    width: map-get($tamanio-horizontal-porcentaje , "xxl" );
-  height: 540px;
-
+    @include conjunto("xxl",540px,relative);
+  
 }
   div.c{
     background-color: var(--color-3);
-    position:absolute;
     top: 47px;
     left: 29px;
-    width: map-get($tamanio-horizontal-porcentaje , "l" );
-    height: 443px;
-    border-radius: 60px;
     box-shadow: 2px 5px 10px black;
     transition: transform 0.2s;
+    @include conjunto("l",443px,absolute);
   }
+  //crear movimiento en el div 
   .c:active{
     transform: scale(0.95);}
 
    .sec3  .art31 {
     position: absolute;
-  
     width:map-get($tamanio-horizontal-porcentaje , "l" );
     height: 540px;
     top: 450px;
@@ -126,38 +163,247 @@ main{
 
   } .sec3  .art32 {
     position: absolute;
-   
     width:map-get($tamanio-horizontal-porcentaje , "l" );
     height: 540px;
     top: 1100px;
     left: -30px;
-
-
   }
   
-  
   div.mrespuesta{
-    position: relative;
-    
+    position: relative; 
     width: map-get($tamanio-horizontal-porcentaje , "xxl" );
     height: 530px;
     background-color: var(--color-4);
     border-radius: 60px;
+    top: 100px;
 
   }
-
   div.respuesta{
+    overflow: hidden;
     position: absolute;
     top: 28px;
     left: 38px;
     width:map-get($tamanio-horizontal-porcentaje , "l" );
     height: 478px;
     background-color: var(--color-3);
-  
     border-radius: 60px;
-
   }
+
+  //exportamos diferentes fuentes para usarlos 
+  @font-face {
+    font-family:Vintage;
+    src: url(../fuentes/retro1.TTF);
+  }
+  @font-face {
+    font-family:titulo;
+    src: url(../fuentes/retro5.ttf);
+  }
+  
+  //usamos el include para usar los mixin
+  #texto1{
+    @include letras();
+  }
+  #texto2{
+    @include letras();
+  }
+  #texto3{
+    @include letras();
+  }
+  #texto4{
+    @include letras();
+  }
+
   .i{
     width: map-get($tamanio-horizontal-porcentaje , "xxl" );
     height: 100%;
+
   }
+
+//foreach praa poner las fotos en los botones
+
+  $foto: curiosidades,hobbies,estudios,datos;
+  @each $p in $foto{
+    .c.#{$p}{
+      background-image:url(../imagenes/#{$p}.png);
+      background-size:100% 70%;  
+      background-position: center;
+      
+      background-repeat: no-repeat;
+
+
+    }
+  }
+
+  //codigo para el interruptor del modod noche
+
+  .switch {
+    position: relative;
+    width: 130px;
+    height: 50px;
+    margin: 0px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(4,52,73);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    transition: background-image .7s ease-in-out;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    bottom: 70px;
+    left: 200px;
+  }
+  
+  .switch:checked {
+    background-color: rgb(0, 195, 255);
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+  }
+  
+  .switch:after {
+    content: '';
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transform: translateX(0px);
+    animation: off .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: inset 5px -5px 4px rgba(53, 53, 53, 0.3);
+  }
+  
+  @keyframes off {
+    0% {
+      transform: translateX(80px);
+      width: 46px;
+    }
+  
+    50% {
+      width: 75px;
+      border-radius: 25px;
+    }
+  
+    100% {
+      transform: translateX(0px);
+      width: 46px;
+    }
+  }
+  
+  .switch:checked:after {
+    animation: on .7s forwards cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: inset -5px -5px 4px rgba(53, 53, 53, 0.3);
+  }
+  
+  @keyframes on {
+    0% {
+      transform: translateX(0px);
+      width: 46px;
+    }
+  
+    50% {
+      width: 75px;
+      border-radius: 25px;
+    }
+  
+    100% {
+      transform: translateX(80px);
+      width: 46px;
+    }
+  }
+  
+  .switch:checked:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    transform-origin: 53px 10px;
+    background-color: transparent;
+    box-shadow: 5px -1px 0px #fff;
+    filter: blur(0px);
+    animation: sun .7s forwards ease;
+  }
+  
+  @keyframes sun {
+    0% {
+      transform: rotate(170deg);
+      background-color: transparent;
+      box-shadow: 5px -1px 0px #fff;
+      filter: blur(0px);
+    }
+  
+    50% {
+      background-color: transparent;
+      box-shadow: 5px -1px 0px #fff;
+      filter: blur(0px);
+    }
+  
+    90% {
+      background-color: #f5daaa;
+      box-shadow: 0px 0px 10px #f5deb4,
+      0px 0px 20px #f5deb4,
+      0px 0px 30px #f5deb4,
+       inset 0px 0px 2px #efd3a3;
+      filter: blur(1px);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+      background-color: #f5daaa;
+      box-shadow: 0px 0px 10px #f5deb4,
+      0px 0px 20px #f5deb4,
+      0px 0px 30px #f5deb4,
+       inset 0px 0px 2px #efd3a3;
+      filter: blur(1px);
+    }
+  }
+  
+  .switch:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    filter: blur(1px);
+    background-color: #f5daaa;
+    box-shadow: 0px 0px 10px #f5deb4,
+  0px 0px 20px #f5deb4,
+  0px 0px 30px #f5deb4,
+   inset 0px 0px 2px #efd3a3;
+    transform-origin: 53px 10px;
+    animation: moon .7s forwards ease;
+  }
+  
+  @keyframes moon {
+    0% {
+      transform: rotate(0deg);
+      filter: blur(1px);
+    }
+  
+    50% {
+      filter: blur(1px);
+    }
+  
+    90% {
+      background-color: transparent;
+      box-shadow: 5px -1px 0px #fff;
+      filter: blur(0px);
+    }
+  
+    100% {
+      transform: rotate(170deg);
+      background-color: transparent;
+      box-shadow: 5px -1px 0px #fff;
+      filter: blur(0px);
+    }
+  }
+  
+  
+  
