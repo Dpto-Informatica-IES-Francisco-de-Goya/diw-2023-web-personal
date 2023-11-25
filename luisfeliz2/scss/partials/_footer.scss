@@ -2,6 +2,8 @@
 $redes:facebook gmail instagram;
 
 
+
+
 .redes{
     height: map-get($tamanio , "grande" );
     position: absolute;
@@ -25,5 +27,16 @@ $fuentes: (
 @each $nombre, $fuente in $fuentes {
     .#{$nombre} {
         font-family: #{$fuente};
+    }
+}
+
+.en-construccion img {
+    width: 50%;
+    @if $debug == false {
+      display: none;
+      
+    }@else{
+      display: inline;
+      text-align: center;
     }
 }

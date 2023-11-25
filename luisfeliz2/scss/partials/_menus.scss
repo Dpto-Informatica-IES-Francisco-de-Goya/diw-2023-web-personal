@@ -13,10 +13,10 @@
     
     background-image:  url("https://c.pxhere.com/photos/e9/ab/hand_laptop_macbook_touchpad_computing-1388435.jpg!d" 
     );
-    background-size: 100%;
+    background-size: map-get($tamanios-porcentaje, "grande" );
     background-position: 3%;
     background-repeat: no-repeat;
-    width: 100%;
+    width: map-get($tamanios-porcentaje , "grande" );
     height: 300px;
     text-align: right;
     color:var(--color1);

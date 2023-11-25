@@ -1,0 +1,30 @@
+#head {
+    background-color: var(--color-1);
+    color: var(--color-3);
+    width: 896px;
+    display: block;
+    
+    filter: drop-shadow(5px 5px 10px #000);
+    position: sticky;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#head .telefono,
+#head .correo,
+#head .imagen {
+    padding: 12px;
+    display: inline-block;
+    width: 30%;
+}
+
+#head .inicio {
+    display: inline-block;
+    width: 28%;
+    padding: 12px;
+    color: black;
+    background-color: aquamarine;
+    filter: drop-shadow(5px 5px 10px #000);
+    border-radius: 20px;
+    margin-left: 2%;
+}

@@ -1,0 +1,32 @@
+$redes-sociales: facebook twitter linkedin instagram gmail;
+
+.redes-sociales {
+  @each $red in $redes-sociales {
+    .icono-#{$red} {
+      background-size: 30px;
+      float: right;
+      @include widthHeight($altura: 100px, $ancho: 50px);
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      // Verifica si la red social es "instagram" y ajusta la imagen según el tema oscuro o claro
+      @if($red == "instagram") {
+        background-image: url(if(var(--tema-oscuro), var(--imgInstagram), var(--imgInstagramOscuro)));
+      } @else {
+        // Usa la imagen predeterminada para otras redes sociales
+        background-image: url("../img/#{$red}.png");
+      }
+    }
+  }
+}
+
+$redes:redes-sociales;
+
+@each $red in $redes{
+    .#{$red}{
+        text-align: center;
+         /* Para alinear los iconos de redes sociales en una fila */
+        /* Para centrar los iconos horizontalmente */
+        /* Para centrar los iconos verticalmente */
+    }
+}

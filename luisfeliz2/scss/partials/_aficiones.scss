@@ -1,0 +1,22 @@
+
+.aficiones{
+    /* background-color:aqua; */
+    height: 600px;
+    width: 30%;
+    @include widthHeight($altura:600px,$ancho:30%);
+    float: left;
+    
+    & div{
+        display: flex;
+        margin-left: 30px;
+        
+    }
+
+}
+
+.cita{
+    width: 10px;
+    justify-content: center;
+    margin-left: 10px;
+    
+}

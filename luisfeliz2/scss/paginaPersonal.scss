@@ -30,16 +30,22 @@ $tamanios-porcentaje:(
 :root .tema-oscuro {
         --color1: deepskyblue;
         --color2: green;
+        
         --color3:  blue;
         --color4: violet;
         --color5: #fff;
-        --color6:
-      }
+        --color6: red;
+        --imgIntagram:url("../img/instagram.png");
+        --tema-oscuro:true;
+        --imgPersonal: url("https://i.pinimg.com/736x/15/94/0c/15940cd9f607fec3675ff5161df83a5e.jpg")
+    }
 
 :root .tema-claro{
 
     --color1:white;
     --color2:deepskyblue;
+    --imgPersonal:url("https://cdn.pixabay.com/photo/2019/08/06/00/46/black-and-white-4387130_1280.jpg");
+    --tema-oscuro:false;
 
 }
 
@@ -51,14 +57,43 @@ $tamanios-porcentaje:(
 
 body{
     margin: 0;
-    height: 500px;
+    
     background-color: var(--color2);
     
 }
-//  debug:false;
+ $debug:false;//ver IF en el footer
+
+ @mixin widthHeight($ancho,$altura){
+    width: $ancho;
+    height: $altura;
+}
+
+
+
+
+@mixin fotoPersonal(){
+    float: left;
+    @include widthHeight($altura:150px,$ancho:150px );
+    border-radius: 50%;
+    margin-left: 20%;
+    background-image: var(--imgPersonal);
+    //background-image: url("https://cdn.pixabay.com/photo/2019/08/06/00/46/black-and-white-4387130_1280.jpg");
+    background-position: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
 
 @import "partials/menus";
-@import "partials/contenido";
 @import "partials/estilos.scss";
 @import "partials/trabajo.scss";
 @import "partials/footer.scss";
+@import "partials/aficiones.scss";
+@import "partials/experiencia.scss";
+@import "partials/footerAbajo.scss";
+
+
+
+@mixin estilo-tipografico($tamano:50px,$color:red,){
+    background-image: $tamano;
+    background-color: $color;
+}

@@ -3,14 +3,17 @@
 .trabajos{
     color: var(--color1);
     bottom: 0;
-    position: relative;
+    
     box-sizing: border-box;
 
-    height: 300px;
-    width: 100%;
+    height: 800px;
+    width: map-get($tamanios-porcentaje , "grande" );
+    @include widthHeight($ancho:map-get($tamanios-porcentaje,"grande"),$altura:400px);
+    // height: 400px;
+    // width: 100%;
     /* background-color:blueviolet; */
-    text-align: center;
+    
     background-image: url("https://969b63259a.cbaul-cdnwnd.com/a86ac7a1dfccff3ae24ccf849406fcee/200000000-a3a34a49c8/cabezara%20mario%20tattoo.jpg?ph=969b63259a");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: map-get($tamanios-porcentaje , "grande" );
 }

@@ -1,0 +1,74 @@
+
+
+$colores-claros : (
+  #efefef,
+  #fff,
+  #484848,
+  #6E2C00,
+  #828282
+);
+
+$colores-oscuros : (
+  #212F3C,
+  #34495E,
+  #CCD1D1,
+  #F9E79F,
+  #fff
+);
+
+$tamanios-iconos-horizontal : (
+ 'pequenio':40px, 
+ 'medio':60px,
+ 'grande':100px
+);
+
+$tamanios-iconos-vertical : (
+ 'pequenio':40px, 
+ 'medio':60px,
+ 'grande':100px
+);
+
+
+//map-get($tamanios-horizontal-fijo,"grande")
+
+
+:root {
+  .tema-claro{
+  --color-1: #{nth($colores-claros,1)};
+  --color-2: #{nth($colores-claros,1)};
+  --color-3: #{nth($colores-claros,1)};
+  --color-4: #{nth($colores-claros,1)};
+  --color-5: #{nth($colores-claros,1)};
+  }
+  .tema-oscuro{
+    --color-1:  #{nth($colores-oscuros,1)};
+    --color-2:  #{nth($colores-oscuros,2)};
+    --color-3:  #{nth($colores-oscuros,3)};
+    --color-4:  #{nth($colores-oscuros,4)};
+    --color-5:  #{nth($colores-oscuros,5)};
+  }
+} 
+
+/* MODO DEBUG*/
+// Ver IF, en el partial principal.....
+$debug:true;
+
+
+
+@import "./partials/_boton.scss";
+@import "./partials/_menu.scss";
+@import "./partials/_principal.scss";
+@import "./partials/_footer.scss";
+
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding: 1rem;
+  background-color: var(--color-1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+

@@ -4,12 +4,17 @@
   --color3: blue;
   --color4: violet;
   --color5: #fff;
-  --color6: ;
+  --color6: red;
+  --imgIntagram:url("../img/instagram.png");
+  --tema-oscuro:true;
+  --imgPersonal: url("https://i.pinimg.com/736x/15/94/0c/15940cd9f607fec3675ff5161df83a5e.jpg") ;
 }
 
 :root .tema-claro {
   --color1:white;
   --color2:deepskyblue;
+  --imgPersonal:url("https://cdn.pixabay.com/photo/2019/08/06/00/46/black-and-white-4387130_1280.jpg");
+  --tema-oscuro:false;
 }
 
 .padre {
@@ -19,7 +24,6 @@
 
 body {
   margin: 0;
-  height: 500px;
   background-color: var(--color2);
 }
 
@@ -59,67 +63,15 @@ body {
   vertical-align: middle;
 }
 
-.contenido {
-  color: black;
-  background-color: var(--color1);
-  height: 300px;
-  width: 100%;
-  display: inline-block;
-}
-.contenido h2 {
-  text-align: center;
-  color: deepskyblue;
-}
-.contenido img {
-  height: 40px;
-}
-
-.aficiones {
-  /* background-color:aqua; */
-  height: 300px;
-  width: 30%;
-  float: left;
-}
-.aficiones div {
-  display: flex;
-  margin-left: 30px;
-}
-
-.cita {
-  width: 10px;
-  justify-content: center;
-  margin-left: 10px;
-}
-
-.experiencia {
-  /* background-color:chartreuse; */
-  height: 300px;
-  width: 30%;
-  float: right;
-  z-index: 0;
-}
-
-.foto {
-  float: left;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  margin-left: 20%;
-  background-image: url("https://cdn.pixabay.com/photo/2019/08/06/00/46/black-and-white-4387130_1280.jpg");
-  background-position: 50%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-
 .trabajos {
   color: var(--color1);
   bottom: 0;
-  position: relative;
   box-sizing: border-box;
-  height: 300px;
+  height: 800px;
   width: 100%;
+  width: 100%;
+  height: 400px;
   /* background-color:blueviolet; */
-  text-align: center;
   background-image: url("https://969b63259a.cbaul-cdnwnd.com/a86ac7a1dfccff3ae24ccf849406fcee/200000000-a3a34a49c8/cabezara%20mario%20tattoo.jpg?ph=969b63259a");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -148,6 +100,127 @@ body {
 
 .enlace {
   font-family: Times New Roman, serif;
+}
+
+.en-construccion img {
+  width: 50%;
+  display: none;
+}
+
+.aficiones {
+  /* background-color:aqua; */
+  height: 600px;
+  width: 30%;
+  width: 30%;
+  height: 600px;
+  float: left;
+}
+.aficiones div {
+  display: flex;
+  margin-left: 30px;
+}
+
+.cita {
+  width: 10px;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.contenido {
+  color: black;
+  background-color: var(--color1);
+  height: 390px;
+  width: 100%;
+  display: inline-block;
+}
+.contenido h2 {
+  text-align: center;
+  color: deepskyblue;
+}
+.contenido img {
+  height: 40px;
+}
+
+.experiencia {
+  /* background-color:chartreuse; */
+  height: 600px;
+  width: 30%;
+  float: right;
+  z-index: 0;
+}
+
+.foto {
+  float: left;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-left: 20%;
+  background-image: url("https://cdn.pixabay.com/photo/2019/08/06/00/46/black-and-white-4387130_1280.jpg");
+  background-position: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 20%;
+  background-image: var(--imgPersonal);
+  background-position: 50%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.redes-sociales .icono-facebook {
+  background-size: 30px;
+  float: right;
+  width: 50px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/facebook.png");
+}
+.redes-sociales .icono-twitter {
+  background-size: 30px;
+  float: right;
+  width: 50px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/twitter.png");
+}
+.redes-sociales .icono-linkedin {
+  background-size: 30px;
+  float: right;
+  width: 50px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/linkedin.png");
+}
+.redes-sociales .icono-instagram {
+  background-size: 30px;
+  float: right;
+  width: 50px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(var(--imgInstagram));
+}
+.redes-sociales .icono-gmail {
+  background-size: 30px;
+  float: right;
+  width: 50px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/gmail.png");
+}
+
+.redes-sociales {
+  text-align: center;
+  /* Para alinear los iconos de redes sociales en una fila */
+  /* Para centrar los iconos horizontalmente */
+  /* Para centrar los iconos verticalmente */
 }
 
 /*# sourceMappingURL=paginaPersonal.css.map */

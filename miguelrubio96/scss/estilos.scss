@@ -1,0 +1,109 @@
+/* 
+   Estilos para el contenedor principal 
+*/
+
+#principal {
+    /* Propiedades del contenedor flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    /* Ancho fijo para el contenedor */
+    width: 896px;
+    
+    /* Altura fija para el contenedor */
+    height: 1000px;
+}
+
+
+/* 
+   Estilos para el cuerpo de la página 
+*/
+
+body {
+    /* Reiniciar márgenes y rellenos predeterminados */
+    margin: 0;
+    padding: 0;
+    
+    /* Centrar contenido tanto horizontal como verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Altura completa del viewport */
+    height: 100vh;
+    
+    /* Color de fondo utilizando una variable personalizada */
+    background-color: var(--color-2);
+}
+
+
+/* 
+   Variables de color personalizadas para el tema claro 
+*/
+
+:root {
+    .tema-claro {
+        --color-1:  #05f1e6;
+        --color-2:  #dbdcdd;
+        --color-3:  #000000;
+        --color-4:  #222831;
+        --color-5:  #a3a3a3;
+    }
+    
+    /* Variables para el tema oscuro */
+    .tema-oscuro {
+        --color-1:  #fbff00;
+        --color-2:  #12222E;
+        --color-3:  #ff0000;
+        --color-4:  rgb(219, 179, 0);
+        --color-5:  #f6ff72;
+    }
+}
+
+
+/* 
+   Mixin para el modo de depuración 
+*/
+
+@mixin debugmode {
+    @if $debug {
+        @debug "Modo de depuración activado";
+        display: inline-block;
+    }
+    @else {
+        display: none;
+    }
+}
+
+
+/* 
+   Tamaños de imagen personalizados 
+*/
+
+$tamanio-img4: (
+    "pequenio": 20%,
+    "medio": 50%,
+    "grande": 100%
+);
+
+
+/* 
+   Autor y comentario 
+*/
+
+$autor: Miguel;
+/*
+   Web desarrollada por #{$autor}
+*/
+
+
+/* 
+   Importación de archivos parciales 
+*/
+
+@import "./partials/head.scss";
+@import "./partials/foot.scss";
+@import "./partials/main.scss";
+@import "./partials/boton.scss";

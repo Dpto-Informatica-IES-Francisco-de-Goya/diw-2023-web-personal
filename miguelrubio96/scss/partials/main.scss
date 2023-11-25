@@ -1,0 +1,102 @@
+
+#contenido{
+    border: 1px var(--color-4);
+    border-radius: 20px;
+    color: var(--color-3);
+    width: 896px;
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.inicio{
+    display: inline-block;
+    width: 28%;
+    padding: 12px;
+    color: var(--color-3);
+    background-color: var(--color-1);
+    filter: drop-shadow( 5px 5px 10px #000 );
+    border-radius: 20px;
+    margin-left:2%;
+}
+#columna{
+    width: 896px;
+    height: 317px;
+    color: var(--color-3);
+    margin-top: 50px;
+    border-radius: 20px;
+    
+   
+}
+.lateral{
+    float: left;
+    width: 30%;
+    height: 300px;
+    margin-right:4%;
+    text-align: right;
+
+}
+.aficiones{
+    float: left;
+    width: 30%;  
+    height: 300px;
+    margin-left:2%;
+
+
+}
+.afic{
+    background-color: var(--color-1);
+    border-radius: 20px;
+    border: 1px var(--color-4);
+    filter: drop-shadow( 5px 5px 10px #000 );    
+    margin-bottom: 10%;
+    text-align: center;
+    padding: 20px;
+}
+
+.lateral2{
+    float:left;
+    width:30%;
+    height: 300px;
+    margin-left:2%;
+
+    
+
+}
+.img3{
+    border: 1px var(--color-4);
+    height: 50px;
+    margin-bottom: 31px;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 18px;
+    border-radius: 50%;
+
+}
+.img2{
+    border: 1px var(--color-4);
+    filter: drop-shadow( 5px 5px 10px #000 );
+    height: 50px;
+    margin-bottom: 31px;
+    text-align: left;
+    margin-top: 1px;
+    margin-left: 15px;
+    border-radius: 50%;
+    
+
+}
+#imagen{
+    border-radius: 50%;
+    width: 248px;
+    height: 248px;
+    margin: auto;
+    box-shadow: 5px 5px gray;
+}
+#imagen2{
+    border-radius: 50%;
+    width: 248px;
+    height: 248px;
+    margin: auto;
+    
+}
+
